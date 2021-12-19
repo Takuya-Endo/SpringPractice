@@ -6,13 +6,17 @@
 	</head>
 	<body>
 		<h1>SpringSample</h1>
-		
 		<a th:href="@{/practice/create}">新規登録</a>
 		
 		<table border="1">
+			<tr>
+				<th>ID</th>
+				<th>NAME</th>
+				<th>AGE</th>
+			</tr>
 			<tr th:each="user : ${userList}" th:object="${user}">
 				<td th:text="*{id}"></td>
-				<td th:text="*{name}"></td>
+				<td><a th:text="*{name}" th:href="@{'/practice/detail/' + *{id}}"></a></td>
 				<td th:text="*{age}"></td>
 			</tr>
 		</table>

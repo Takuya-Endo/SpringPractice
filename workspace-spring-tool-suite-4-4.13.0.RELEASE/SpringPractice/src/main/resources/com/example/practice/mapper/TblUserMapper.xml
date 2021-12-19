@@ -12,6 +12,17 @@
 		FROM
 			tbl_user
 	</select>
+
+	<select id="selectOne" resultType="com.example.practice.entity.User">
+		SELECT 
+			id
+			, name
+			, age
+		FROM
+			tbl_user
+		WHERE
+			id = #{id}
+	</select>
 	
 	<insert id="insert" parameterType="com.example.practice.entity.User">
 		INSERT INTO

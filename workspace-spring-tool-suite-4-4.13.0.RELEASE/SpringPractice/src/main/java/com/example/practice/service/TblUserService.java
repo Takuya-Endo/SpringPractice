@@ -20,6 +20,10 @@ public class TblUserService {
 		return this.tblUserMapper.selectAll();
 	}
 
+	public User selectOne(int id) {
+		return this.tblUserMapper.selectOne(id);
+	}
+	
 	public boolean insert(User user) {
 		return this.tblUserMapper.insert(user);
 	}

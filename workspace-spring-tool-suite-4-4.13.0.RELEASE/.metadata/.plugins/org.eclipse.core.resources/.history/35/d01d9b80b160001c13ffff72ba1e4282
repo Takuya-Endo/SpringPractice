@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<title>SpringSample</title>
+	</head>
+	<body>
+		<h1>SpringSample</h1>
+		
+		<a th:href="@{practice}">一覧へ</a>
+		
+		<form th:action="@{/practice/insert}" th:object="${userForm}" method="post">
+			<p>ID:<input type="text" th:field="*{id}" /></p>
+			<p>NAME:<input type="text" th:field="*{name}" /></p>
+			<p>AGE:<input type="text" th:field="*{age}" /></p>
+			<div><input type="submit" value="送信" /></div>
+		</form>
+		
+	</body>
+</html>

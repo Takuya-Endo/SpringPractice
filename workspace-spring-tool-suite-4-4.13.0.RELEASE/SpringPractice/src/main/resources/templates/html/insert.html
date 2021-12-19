@@ -6,6 +6,7 @@
 	</head>
 	<body>
 		<h1>SpringSample</h1>
+		<a th:href="@{/practice}">一覧へ</a>
 		
 		<form th:action="@{/practice/insert}" th:object="${userForm}" method="post">
 			<p>ID:<input type="text" th:field="*{id}" /></p>
