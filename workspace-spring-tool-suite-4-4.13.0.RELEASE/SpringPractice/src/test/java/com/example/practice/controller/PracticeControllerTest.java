@@ -7,9 +7,22 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.example.practice.service.TblUserService;
 
 class PracticeControllerTest {
-
+	
+	@Mock
+	@Autowired
+	private TblUserService tblUserService;
+	
+	@InjectMocks
+	@Autowired
+	private PracticeController practiceController;
+	
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
 	}
