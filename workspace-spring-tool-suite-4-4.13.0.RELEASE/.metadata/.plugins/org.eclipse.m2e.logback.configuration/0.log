@@ -2527,3 +2527,7 @@ org.eclipse.core.runtime.CoreException: Could not resolve artifact org.mybatis.s
 2021-12-19 19:25:32,997 [Worker-45: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 4 resources
 2021-12-19 19:25:33,012 [Worker-45: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2021-12-19 19:25:33,012 [Worker-45: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2021-12-19 19:25:33,013 [Worker-45: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\home\Desktop\SpringPractice\workspace-spring-tool-suite-4-4.13.0.RELEASE\SpringPractice\src\test\resources
+2021-12-19 19:29:42,323 [Worker-45: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-12-19 19:29:42,324 [Worker-45: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2021-12-19 19:29:42,359 [Worker-45: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
