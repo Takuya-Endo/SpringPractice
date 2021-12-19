@@ -72,7 +72,6 @@ INDEX VERSION 1.131+C:\Users\home\Desktop\SpringPractice\workspace-spring-tool-s
 812053905.index
 727925999.index
 134742888.index
-173882106.index
 4245310696.index
 176842389.index
 295313590.index

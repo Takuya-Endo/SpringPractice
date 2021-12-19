@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.practice.entity.User;
@@ -28,8 +29,19 @@ public class PracticeController {
 	}
 	
 	@RequestMapping(value = "create")
-	public String create() {
+	public String create(Model model) {
+		
+		model.addAttribute("userForm", new User());
 		return "html/insert";
+		
 	}
-
+	
+	@RequestMapping(value = "insert")
+	public String insert(@ModelAttribute User user) {
+		
+//		return "forward:/practice";
+		return "redirect:/practice";
+		
+	}
+	
 }

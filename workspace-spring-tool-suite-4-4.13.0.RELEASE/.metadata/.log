@@ -6707,3 +6707,12 @@ Caused by: java.lang.NullPointerException: Cannot invoke "java.util.concurrent.C
 
 !ENTRY org.eclipse.ui 2 2 2021-12-19 16:57:04.811
 !MESSAGE Invalid property category path: org.springframework.ide.eclipse.beans.ui.properties.ProjectPropertyPage (bundle: org.springframework.ide.eclipse.xml.namespaces, propertyPage: org.springframework.ide.eclipse.beans.ui.namespaces.projectPropertyPage)
+
+!ENTRY org.eclipse.lsp4e 1 0 2021-12-19 17:12:20.855
+!MESSAGE [Log]	Scanner.scan has not advanced at offset 293, state before: 10 after: 4
+
+!ENTRY org.eclipse.lsp4e 1 0 2021-12-19 17:12:37.187
+!MESSAGE [Log]	Scanner.scan has not advanced at offset 309, state before: 10 after: 4
+
+!ENTRY org.eclipse.lsp4e 1 0 2021-12-19 17:13:48.599
+!MESSAGE [Log]	Scanner.scan has not advanced at offset 472, state before: 10 after: 4
