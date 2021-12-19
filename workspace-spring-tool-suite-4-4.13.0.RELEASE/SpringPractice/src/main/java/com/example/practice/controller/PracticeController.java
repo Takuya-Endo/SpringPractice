@@ -26,5 +26,10 @@ public class PracticeController {
 		return "html/index";
 		
 	}
+	
+	@RequestMapping(value = "create")
+	public String create() {
+		return "html/insert";
+	}
 
 }
