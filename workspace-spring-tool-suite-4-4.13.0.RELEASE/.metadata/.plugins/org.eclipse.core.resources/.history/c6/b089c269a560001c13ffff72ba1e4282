@@ -14,18 +14,12 @@
 	</select>
 	
 	<insert id="insert" parameterType="com.example.practice.entity.User">
-		INSERT INTO
-			tbl_user
-			( id
-			, name
-			, age
-			)
-		VALUES
-			( #{id}
-			, #{name}
-			, #{age}
-			)
 	</insert>
+	
+	<insert id="create" parameterType="com.example.demo.UserData">
+        INSERT INTO USER_DATA ( id, name, birth_year, birth_month, birth_day, sex )
+        VALUES (#{id}, #{name}, #{birthY}, #{birthM}, #{birthD}, #{sex})
+    </insert>
 
 <!--
     <select id="findAll" resultType="com.example.demo.UserData">

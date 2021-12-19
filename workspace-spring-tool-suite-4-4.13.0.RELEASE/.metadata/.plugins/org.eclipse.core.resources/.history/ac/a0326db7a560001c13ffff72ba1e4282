@@ -39,11 +39,7 @@ public class PracticeController {
 	@RequestMapping(value = "insert")
 	public String insert(@ModelAttribute User user) {
 		
-		boolean result = this.tblUserService.insert(user);
-		if (!result) {
-			System.err.println("insert失敗");
-		}
-		
+//		return "forward:/practice";
 		return "redirect:/practice";
 		
 	}

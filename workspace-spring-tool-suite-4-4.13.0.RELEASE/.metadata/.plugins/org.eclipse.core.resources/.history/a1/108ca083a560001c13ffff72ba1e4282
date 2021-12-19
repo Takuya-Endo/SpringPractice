@@ -19,9 +19,5 @@ public class TblUserService {
 	public List<User> selectAll() {
 		return this.tblUserMapper.selectAll();
 	}
-
-	public boolean insert(User user) {
-		return this.tblUserMapper.insert(user);
-	}
 	
 }

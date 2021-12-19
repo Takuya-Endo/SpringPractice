@@ -44,6 +44,7 @@ public class PracticeController {
 			System.err.println("insert失敗");
 		}
 		
+//		return "forward:/practice";
 		return "redirect:/practice";
 		
 	}
