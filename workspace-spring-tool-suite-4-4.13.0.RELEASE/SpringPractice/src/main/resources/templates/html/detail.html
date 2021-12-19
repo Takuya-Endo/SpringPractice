@@ -23,5 +23,14 @@
 			</tr>
 		</table>
 		
+		<div>
+			<form th:action="@{/practice/delete}" method="post">
+				<input type="hidden" name="id" th:value="${user.id}" />
+				<input type="hidden" name="name" th:value="${user.name}" />
+				<input type="hidden" name="age" th:value="${user.age}" />
+				<input type="submit" value="削除" />
+			</form>
+		</div>
+		
 	</body>
 </html>

@@ -28,4 +28,8 @@ public class TblUserService {
 		return this.tblUserMapper.insert(user);
 	}
 	
+	public boolean delete(User user) {
+		return this.tblUserMapper.delete(user);
+	}
+	
 }

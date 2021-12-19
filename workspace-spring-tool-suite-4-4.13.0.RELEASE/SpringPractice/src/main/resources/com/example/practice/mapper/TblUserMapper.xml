@@ -37,6 +37,14 @@
 			, #{age}
 			)
 	</insert>
+	
+	<delete id="delete" parameterType="com.example.practice.entity.User">
+        DELETE
+        FROM
+        	tbl_user
+        WHERE
+        	id = #{id}
+    </delete>
 
 <!--
     <select id="findAll" resultType="com.example.demo.UserData">
