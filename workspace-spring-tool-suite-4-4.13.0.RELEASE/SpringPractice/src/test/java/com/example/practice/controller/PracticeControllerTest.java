@@ -13,6 +13,7 @@ import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.example.practice.entity.User;
 import com.example.practice.service.TblUserService;
 
 class PracticeControllerTest {
@@ -25,6 +26,8 @@ class PracticeControllerTest {
 	@Autowired
 	private PracticeController practiceController;
 	
+	private User user = new User();
+	
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
 	}
@@ -35,7 +38,13 @@ class PracticeControllerTest {
 
 	@BeforeEach
 	void setUp() throws Exception {
+		
 		MockitoAnnotations.openMocks(this);
+		
+		this.user.setId(025);
+		this.user.setName("TestUser25");
+		this.user.setAge(35);
+		
 	}
 
 	@AfterEach
@@ -54,7 +63,14 @@ class PracticeControllerTest {
 
 	@Test
 	void testInsert() {
-		fail("Not yet implemented");
+			
+		Mockito.doReturn(true).when(this.tblUserService).insert(this.user);
+		
+		String actual = this.practiceController.insert(this.user);
+		String expected = "redirect:/practice";
+		
+		assertEquals(expected, actual);
+		
 	}
 
 	@Test
