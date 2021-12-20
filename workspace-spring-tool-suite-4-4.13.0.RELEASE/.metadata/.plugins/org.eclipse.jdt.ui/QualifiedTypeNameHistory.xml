@@ -19,4 +19,6 @@
     <fullyQualifiedTypeName name="org.mockito.Mock"/>
     <fullyQualifiedTypeName name="com.example.practice.controller.PracticeController"/>
     <fullyQualifiedTypeName name="org.mockito.InjectMocks"/>
+    <fullyQualifiedTypeName name="org.mockito.Mockito"/>
+    <fullyQualifiedTypeName name="org.mockito.MockitoAnnotations"/>
 </qualifiedTypeNameHistroy>
