@@ -1,6 +1,7 @@
 package com.example.practice.controller;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.times;
 
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
@@ -58,16 +59,45 @@ class PracticeControllerTest {
 
 	@Test
 	void testCreate() {
-		fail("Not yet implemented");
+		
+		String actual = this.practiceController.create(null);
+		String expected = "html/insert";
+		
+		assertEquals(expected, actual);
+		
 	}
 
 	@Test
-	void testInsert() {
+	void testInsertTrue() {
 			
 		Mockito.doReturn(true).when(this.tblUserService).insert(this.user);
 		
 		String actual = this.practiceController.insert(this.user);
 		String expected = "redirect:/practice";
+	
+		Mockito.verify(this.tblUserService, times(1)).insert(this.user);
+		
+		assertEquals(expected, actual);
+		
+	}
+	
+	@Test
+	void testInsertFalse() {
+			
+		Mockito.doReturn(false).when(this.tblUserService).insert(this.user);
+		
+		System.out.print("actual  : ");
+		
+		String actual = this.practiceController.insert(this.user);
+		String expected = "redirect:/practice";
+	
+		System.out.print("expected: ");
+		System.err.println("insert失敗");
+		
+		Mockito.verify(this.tblUserService, times(1)).insert(this.user);
+		
+//		Mockito.verify(System.err, times(1)).println("insert失敗");
+		
 		
 		assertEquals(expected, actual);
 		
