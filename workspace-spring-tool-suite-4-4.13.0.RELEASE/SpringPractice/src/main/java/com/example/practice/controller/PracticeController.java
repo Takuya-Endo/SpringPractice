@@ -20,6 +20,11 @@ public class PracticeController {
 	@Autowired
 	private TblUserService tblUserService;
 	
+	//テスト用メソッド
+	public void log() {
+		System.out.println("test");
+	}
+	
 	@RequestMapping(value = "")
 	public String list(Model model) {
 		

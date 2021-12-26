@@ -17,7 +17,7 @@ import com.example.practice.service.TblUserService;
 import mockit.Injectable;
 import mockit.Tested;
 
-//@ExtendWith(SpringExtension.class)
+@ExtendWith(SpringExtension.class)
 class PracticeControllerTest3 {
 
 	@Tested
@@ -43,7 +43,7 @@ class PracticeControllerTest3 {
 	@Test
 	void testRead() {
 		
-		
+		this.practiceController.log();
 		
 	}
 	

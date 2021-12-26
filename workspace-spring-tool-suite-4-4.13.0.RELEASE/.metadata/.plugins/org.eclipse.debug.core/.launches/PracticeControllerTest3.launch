@@ -17,5 +17,5 @@
     <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="com.example.practice.controller.PracticeControllerTest3"/>
     <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="SpringPractice"/>
     <stringAttribute key="org.eclipse.jdt.launching.SOURCE_PATH_PROVIDER" value="org.eclipse.m2e.launchconfig.sourcepathProvider"/>
-    <stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-ea javaagent:C:\Users\home\.m2\repository\org\jmockit\jmockit\1.49\jmockit-1.4.9.jar"/>
+    <stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-ea"/>
 </launchConfiguration>
