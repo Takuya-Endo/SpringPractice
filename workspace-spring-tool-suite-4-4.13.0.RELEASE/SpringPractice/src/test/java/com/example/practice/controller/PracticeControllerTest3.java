@@ -24,6 +24,13 @@ class PracticeControllerTest3 {
 	@Autowired
 	private PracticeController practiceController;
 	
+	@Injectable
+	private TblUserService tblUserService;
+	
+//	@Autowired
+//	private Model model;
+	
+	
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
 	}
@@ -41,9 +48,16 @@ class PracticeControllerTest3 {
 	}
 
 	@Test
+	void testLog() {
+		this.practiceController.log();
+	}
+	
+	@Test
 	void testRead() {
 		
-		this.practiceController.log();
+		
+		
+//		this.practiceController.read(1, this.model);
 		
 	}
 	

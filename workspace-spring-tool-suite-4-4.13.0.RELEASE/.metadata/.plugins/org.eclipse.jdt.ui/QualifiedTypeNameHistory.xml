@@ -21,9 +21,11 @@
     <fullyQualifiedTypeName name="org.junit.jupiter.api.extension.ExtendWith"/>
     <fullyQualifiedTypeName name="org.springframework.test.context.junit.jupiter.SpringExtension"/>
     <fullyQualifiedTypeName name="mockit.Tested"/>
-    <fullyQualifiedTypeName name="com.example.practice.controller.PracticeController"/>
-    <fullyQualifiedTypeName name="org.springframework.ui.Model"/>
+    <fullyQualifiedTypeName name="org.springframework.boot.test.autoconfigure.data.r2dbc.AutoConfigureDataR2dbc"/>
     <fullyQualifiedTypeName name="com.example.practice.service.TblUserService"/>
+    <fullyQualifiedTypeName name="mockit.integration.junit5.JMockitExtension"/>
+    <fullyQualifiedTypeName name="com.example.practice.controller.PracticeController"/>
     <fullyQualifiedTypeName name="mockit.Injectable"/>
+    <fullyQualifiedTypeName name="org.springframework.ui.Model"/>
     <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
 </qualifiedTypeNameHistroy>
