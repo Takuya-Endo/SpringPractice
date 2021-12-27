@@ -25,6 +25,11 @@ public class PracticeController {
 		System.out.println("test");
 	}
 	
+	//例外送出用練習メソッド
+	public void exception() throws Exception {
+		throw new Exception("testException");
+	}
+	
 	@RequestMapping(value = "")
 	public String list(Model model) {
 		

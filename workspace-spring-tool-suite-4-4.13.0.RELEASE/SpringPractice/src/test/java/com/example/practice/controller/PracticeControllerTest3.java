@@ -21,14 +21,13 @@ import mockit.Tested;
 class PracticeControllerTest3 {
 
 	@Tested
-	@Autowired
-	private PracticeController practiceController;
+	private PracticeController practiceController = new PracticeController();
 	
 	@Injectable
 	private TblUserService tblUserService;
 	
-//	@Autowired
-//	private Model model;
+	@Injectable
+	private Model model;
 	
 	
 	@BeforeAll
@@ -47,19 +46,38 @@ class PracticeControllerTest3 {
 	void tearDown() throws Exception {
 	}
 
-	@Test
-	void testLog() {
-		this.practiceController.log();
-	}
+//	@Test
+//	void testLog() {
+//		this.practiceController.log();
+//	}
 	
 	@Test
-	void testRead() {
+	void testException1() {
 		
+		try {
+			
+			this.practiceController.exception();
+			
+			fail();
+			
+		} catch (Exception e) {
+			
+			e.printStackTrace();
+			
+		}
 		
-		
-//		this.practiceController.read(1, this.model);
 		
 	}
+	
+	
+//	@Test
+//	void testRead() {
+//		
+//		
+//		
+//		this.practiceController.read(1, this.model);
+//		
+//	}
 	
 //	@Test
 //	void testList() {
