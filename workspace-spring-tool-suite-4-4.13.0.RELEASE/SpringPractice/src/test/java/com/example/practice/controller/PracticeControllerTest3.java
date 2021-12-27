@@ -7,6 +7,7 @@ import static org.junit.jupiter.api.Assertions.fail;
 
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -53,28 +54,38 @@ class PracticeControllerTest3 {
 //		this.practiceController.log();
 //	}
 	
-	@Test
-	void testException1() {
-		
-		try {
-			
-			this.practiceController.exception();
-			
-			fail();
-			
-		} catch (Exception e) {
-			
-			String expected = "testException";
-			String actual = e.getMessage();
-			
-			assertThat(actual, is(expected));
-			
-		}
-		
-	}
+//	@Test
+//	void testException1() {
+//		
+//		try {
+//			
+//			this.practiceController.exception();
+//			
+//			fail();
+//			
+//		} catch (Exception e) {
+//			
+//			String expected = "testException";
+//			String actual = e.getMessage();
+//			
+//			assertThat(actual, is(expected));
+//			
+//		}
+//		
+//	}
 	
 	@Test
 	void testException2() {
+		
+		Assertions.assertThrows(
+			
+			Exception.class, () -> {
+				
+				this.practiceController.exception();
+				
+			}
+			
+		);
 		
 	}
 	
