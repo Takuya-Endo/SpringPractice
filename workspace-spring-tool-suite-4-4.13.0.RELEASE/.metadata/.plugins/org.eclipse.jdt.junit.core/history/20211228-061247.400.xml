@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="PracticeControllerTest3" project="SpringPractice" tests="1" started="1" failures="0" errors="0" ignored="0">
+  <testsuite name="com.example.practice.controller.PracticeControllerTest3" time="1.957" displayname="PracticeControllerTest3" uniqueid="[engine:junit-jupiter]/[class:com.example.practice.controller.PracticeControllerTest3]">
+    <testcase name="testException1" classname="com.example.practice.controller.PracticeControllerTest3" time="1.957" displayname="testException1()" uniqueid="[engine:junit-jupiter]/[class:com.example.practice.controller.PracticeControllerTest3]/[method:testException1()]"/>
+  </testsuite>
+</testrun>

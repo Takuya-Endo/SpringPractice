@@ -1,6 +1,9 @@
 package com.example.practice.controller;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertThat;
+import static org.junit.jupiter.api.Assertions.fail;
 
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
@@ -8,7 +11,6 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.ui.Model;
 
@@ -62,10 +64,17 @@ class PracticeControllerTest3 {
 			
 		} catch (Exception e) {
 			
-			e.printStackTrace();
+			String expected = "testException";
+			String actual = e.getMessage();
+			
+			assertThat(actual, is(expected));
 			
 		}
 		
+	}
+	
+	@Test
+	void testException2() {
 		
 	}
 	
