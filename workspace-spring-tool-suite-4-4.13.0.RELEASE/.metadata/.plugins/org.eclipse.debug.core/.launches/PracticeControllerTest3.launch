@@ -6,6 +6,13 @@
     <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
         <listEntry value="1"/>
     </listAttribute>
+    <listAttribute key="org.eclipse.eclemma.core.SCOPE_IDS">
+        <listEntry value="=SpringPractice/target\/generated-test-sources\/test-annotations=/ignore_optional_problems=/true=/=/test=/true=/=/optional=/true=/=/maven.pomderived=/true=/=/m2e-apt=/true=/"/>
+        <listEntry value="=SpringPractice/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/"/>
+        <listEntry value="=SpringPractice/src\/main\/resources=/maven.pomderived=/true=/"/>
+        <listEntry value="=SpringPractice/src\/test\/java=/test=/true=/=/optional=/true=/=/maven.pomderived=/true=/"/>
+        <listEntry value="=SpringPractice/target\/generated-sources\/annotations=/ignore_optional_problems=/true=/=/optional=/true=/=/maven.pomderived=/true=/=/m2e-apt=/true=/"/>
+    </listAttribute>
     <stringAttribute key="org.eclipse.jdt.junit.CONTAINER" value=""/>
     <booleanAttribute key="org.eclipse.jdt.junit.KEEPRUNNING_ATTR" value="false"/>
     <stringAttribute key="org.eclipse.jdt.junit.TESTNAME" value=""/>
@@ -17,5 +24,5 @@
     <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="com.example.practice.controller.PracticeControllerTest3"/>
     <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="SpringPractice"/>
     <stringAttribute key="org.eclipse.jdt.launching.SOURCE_PATH_PROVIDER" value="org.eclipse.m2e.launchconfig.sourcepathProvider"/>
-    <stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-ea"/>
+    <stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-ea -javaagent:C:\Users\home\Desktop\SpringPractice\jmockit\jmockit-1.49.jar"/>
 </launchConfiguration>

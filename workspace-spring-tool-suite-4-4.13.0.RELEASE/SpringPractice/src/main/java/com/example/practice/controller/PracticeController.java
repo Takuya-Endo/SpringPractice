@@ -20,15 +20,15 @@ public class PracticeController {
 	@Autowired
 	private TblUserService tblUserService;
 	
-	//テスト用メソッド
-	public void log() {
-		System.out.println("test");
-	}
-	
-	//例外送出用練習メソッド
-	public void exception() throws Exception {
-		throw new Exception("testException");
-	}
+//	//テスト用メソッド
+//	public void log() {
+//		System.out.println("test");
+//	}
+//	
+//	//例外送出用練習メソッド
+//	public void exception() throws Exception {
+//		throw new Exception("testException");
+//	}
 	
 	@RequestMapping(value = "")
 	public String list(Model model) {

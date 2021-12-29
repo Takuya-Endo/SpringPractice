@@ -25,7 +25,12 @@
     <fullyQualifiedTypeName name="com.example.practice.service.TblUserService"/>
     <fullyQualifiedTypeName name="mockit.integration.junit5.JMockitExtension"/>
     <fullyQualifiedTypeName name="com.example.practice.controller.PracticeController"/>
-    <fullyQualifiedTypeName name="mockit.Injectable"/>
     <fullyQualifiedTypeName name="org.springframework.ui.Model"/>
     <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+    <fullyQualifiedTypeName name="java.lang.Exception"/>
+    <fullyQualifiedTypeName name="org.junit.jupiter.api.Assertions"/>
+    <fullyQualifiedTypeName name="org.assertj.core.api.Assertions"/>
+    <fullyQualifiedTypeName name="org.junit.jupiter.api.TestMethodOrder"/>
+    <fullyQualifiedTypeName name="org.junit.jupiter.api.MethodOrderer"/>
+    <fullyQualifiedTypeName name="mockit.Injectable"/>
 </qualifiedTypeNameHistroy>
