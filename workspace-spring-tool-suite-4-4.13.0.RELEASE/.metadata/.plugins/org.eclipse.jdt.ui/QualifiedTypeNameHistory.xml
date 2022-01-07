@@ -22,15 +22,20 @@
     <fullyQualifiedTypeName name="org.springframework.test.context.junit.jupiter.SpringExtension"/>
     <fullyQualifiedTypeName name="mockit.Tested"/>
     <fullyQualifiedTypeName name="org.springframework.boot.test.autoconfigure.data.r2dbc.AutoConfigureDataR2dbc"/>
-    <fullyQualifiedTypeName name="com.example.practice.service.TblUserService"/>
     <fullyQualifiedTypeName name="mockit.integration.junit5.JMockitExtension"/>
     <fullyQualifiedTypeName name="com.example.practice.controller.PracticeController"/>
-    <fullyQualifiedTypeName name="org.springframework.ui.Model"/>
-    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
     <fullyQualifiedTypeName name="java.lang.Exception"/>
     <fullyQualifiedTypeName name="org.junit.jupiter.api.Assertions"/>
     <fullyQualifiedTypeName name="org.assertj.core.api.Assertions"/>
     <fullyQualifiedTypeName name="org.junit.jupiter.api.TestMethodOrder"/>
     <fullyQualifiedTypeName name="org.junit.jupiter.api.MethodOrderer"/>
+    <fullyQualifiedTypeName name="org.springframework.ui.Model"/>
+    <fullyQualifiedTypeName name="com.example.practice.service.TblUserService"/>
+    <fullyQualifiedTypeName name="org.springframework.test.context.ContextConfiguration"/>
     <fullyQualifiedTypeName name="mockit.Injectable"/>
+    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+    <fullyQualifiedTypeName name="mockit.Mocked"/>
+    <fullyQualifiedTypeName name="org.springframework.boot.test.mock.mockito.MockBean"/>
+    <fullyQualifiedTypeName name="org.springframework.context.annotation.Bean"/>
+    <fullyQualifiedTypeName name="org.springframework.boot.test.mock.mockito.SpyBean"/>
 </qualifiedTypeNameHistroy>

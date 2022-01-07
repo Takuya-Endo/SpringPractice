@@ -1,0 +1,99 @@
+package com.example.practice.controller;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
+
+import com.example.practice.service.TblUserService;
+
+import mockit.Injectable;
+import mockit.Tested;
+
+@ExtendWith(SpringExtension.class)
+class JmockitPracticeControllerTest3 {
+
+	@Tested
+	private PracticeController practiceController = new PracticeController();
+	
+	
+	@Injectable
+	private TblUserService tblUserService;
+	
+	
+	@BeforeEach
+	void setUp() throws Exception {
+	}
+
+
+	@Test
+	void testLog() {
+//		this.practiceController.log();
+	}
+	
+//	@Test
+//	void testException1() {
+//		
+//		try {
+//			
+//			this.practiceController.exception();
+//			
+//			fail();
+//			
+//		} catch (Exception e) {
+//			
+//			String expected = "testException";
+//			String actual = e.getMessage();
+//			
+//			assertThat(actual, is(expected));
+//			
+//		}
+//		
+//	}
+	
+//	@Test
+//	void testException2() {
+//		
+//		Assertions.assertThrows(
+//			
+//			Exception.class, () -> {
+//				
+//				this.practiceController.exception();
+//				
+//			}
+//			
+//		);
+//		
+//	}
+	
+	
+//	@Test
+//	void testRead() {
+//		
+//		
+//		
+//		this.practiceController.read(1, this.model);
+//		
+//	}
+	
+//	@Test
+//	void testList() {
+//		fail("Not yet implemented");
+//	}
+//
+//	@Test
+//	void testCreate() {
+//		fail("Not yet implemented");
+//	}
+//
+//	@Test
+//	void testInsert() {
+//		fail("Not yet implemented");
+//	}
+//
+//	@Test
+//	void testDelete() {
+//		fail("Not yet implemented");
+//	}
+
+}

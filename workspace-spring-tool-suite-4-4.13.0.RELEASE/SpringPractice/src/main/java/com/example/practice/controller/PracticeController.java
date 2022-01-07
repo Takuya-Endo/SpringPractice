@@ -20,12 +20,7 @@ public class PracticeController {
 	@Autowired
 	private TblUserService tblUserService;
 	
-//	//テスト用メソッド
-//	public void log() {
-//		System.out.println("test");
-//	}
-//	
-//	//例外送出用練習メソッド
+//	//例外送出テスト用メソッド
 //	public void exception() throws Exception {
 //		throw new Exception("testException");
 //	}
