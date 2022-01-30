@@ -7,10 +7,9 @@
     http://www.springframework.org/schema/beans/spring-beans.xsd">
 	
 
-	
+	<!--
 	<bean id="tblUserService" class="com.example.practice.service.TblUserService"/>
 	
-	<!--
 	
 	<bean id="tblUserMapper" class="com.example.practice.mapper.TblUserMapper"/>
 	

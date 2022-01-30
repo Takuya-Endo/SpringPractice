@@ -3,9 +3,6 @@ package com.example.practice.controller;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.boot.test.mock.mockito.SpyBean;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.ui.Model;
@@ -14,21 +11,22 @@ import com.example.practice.mapper.TblUserMapper;
 import com.example.practice.service.TblUserService;
 
 import mockit.Injectable;
+import mockit.Mocked;
 import mockit.Tested;
 
 @ExtendWith(SpringExtension.class)
 @ContextConfiguration(locations = {"file:src/test/applicationcontext.xml"})
 class JmockitPracticeControllerTest {
 
+	
+	@Tested private TblUserService tblUserService;
+	
 	@Tested
 	private PracticeController practiceController = new PracticeController();
 	
-	@Injectable
-	@Autowired
-	private TblUserService tblUserService;
+	@Injectable private TblUserMapper tblUserMapper;
 	
-	@Injectable
-	private Model model;
+	@Mocked private Model model;
 
 	
 	@BeforeEach
