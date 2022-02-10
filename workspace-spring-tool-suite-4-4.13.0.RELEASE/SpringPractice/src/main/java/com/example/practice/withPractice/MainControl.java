@@ -15,13 +15,15 @@ public class MainControl {
 			System.out.println("Judge-1");
 		}
 		
-		this.user = new User();
-		if (judge.judgeUser(this.user)) {
+		if (judge.judgeString("false")) {
 			System.out.println("Judge-2");
 		}
 		
-		if (judge.judgeString("false")) {
+
+		this.user = new User();
+		if (judge.judgeUser(this.user)) {
 			System.out.println("Judge-3");
+			System.exit(0);
 		}
 		
 		this.user = new User("UserName", 1);
