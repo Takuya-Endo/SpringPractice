@@ -5,7 +5,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class MainControl {
 	
 	@Autowired
-	Judge judge;
+	private Judge judge;
+	
+	private User user = null;
 	
 	public void main() {
 		
@@ -13,7 +15,8 @@ public class MainControl {
 			System.out.println("Judge-1");
 		}
 		
-		if (judge.judgeUser(new User())) {
+		this.user = new User();
+		if (judge.judgeUser(this.user)) {
 			System.out.println("Judge-2");
 		}
 		
@@ -21,7 +24,8 @@ public class MainControl {
 			System.out.println("Judge-3");
 		}
 		
-		if (judge.judgeUser(new User("UserName", 1))) {
+		this.user = new User("UserName", 1);
+		if (judge.judgeUser(this.user)) {
 			System.out.println("Judge-4");
 		}
 		
