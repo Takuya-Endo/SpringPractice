@@ -9,7 +9,9 @@
 		<a th:href="@{/practice}">一覧へ</a>
 		
 		<form th:action="@{/practice/insert}" th:object="${userForm}" method="post">
+			<!--
 			<p>ID:<input type="text" th:field="*{id}" /></p>
+			-->
 			<p>NAME:<input type="text" th:field="*{name}" /></p>
 			<p>AGE:<input type="text" th:field="*{age}" /></p>
 			<div><input type="submit" value="送信" /></div>

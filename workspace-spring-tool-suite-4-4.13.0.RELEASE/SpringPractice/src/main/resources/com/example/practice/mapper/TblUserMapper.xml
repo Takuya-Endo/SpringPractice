@@ -24,6 +24,13 @@
 			id = #{id}
 	</select>
 	
+	<select id="getNextId" resultType="int">
+		SELECT 
+			MAX(NVL(id, 0)) + 1
+		FROM
+			tbl_user
+	</select>
+	
 	<insert id="insert" parameterType="com.example.practice.entity.User">
 		INSERT INTO
 			tbl_user

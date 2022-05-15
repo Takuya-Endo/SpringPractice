@@ -24,6 +24,10 @@ public class TblUserService {
 		return this.tblUserMapper.selectOne(id);
 	}
 	
+	public int getNextId() {
+		return this.tblUserMapper.getNextId();
+	}
+	
 	public boolean insert(User user) {
 		return this.tblUserMapper.insert(user);
 	}

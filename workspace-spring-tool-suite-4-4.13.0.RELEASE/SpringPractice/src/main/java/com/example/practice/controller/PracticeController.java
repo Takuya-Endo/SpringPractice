@@ -20,7 +20,7 @@ public class PracticeController {
 	@Autowired
 	private TblUserService tblUserService;
 	
-//	//例外送出テスト用メソッド
+//	//萓句､夜�∝�ｺ繝�繧ｹ繝育畑繝｡繧ｽ繝�繝�
 //	public void exception() throws Exception {
 //		throw new Exception("testException");
 //	}
@@ -46,9 +46,12 @@ public class PracticeController {
 	@RequestMapping(value = "insert")
 	public String insert(@ModelAttribute User user) {
 		
+		int id = this.tblUserService.getNextId();
+		user.setId(id);
+		
 		boolean result = this.tblUserService.insert(user);
 		if (!result) {
-			System.err.println("insert失敗");
+			System.err.println("insert螟ｱ謨�");
 		}
 		
 		return "redirect:/practice";
@@ -70,7 +73,7 @@ public class PracticeController {
 		
 		boolean result = this.tblUserService.delete(user);
 		if (!result) {
-			System.err.println("delete失敗");
+			System.err.println("delete螟ｱ謨�");
 		}
 		
 		return "redirect:/practice";

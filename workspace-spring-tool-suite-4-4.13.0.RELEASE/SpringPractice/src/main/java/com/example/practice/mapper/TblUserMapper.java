@@ -11,6 +11,7 @@ public interface TblUserMapper {
 	
 	public abstract List<User> selectAll();
 	public abstract User selectOne(int id);
+	public abstract int getNextId();
 	public abstract boolean insert(User user);
 	public abstract boolean delete(User user);
 	
