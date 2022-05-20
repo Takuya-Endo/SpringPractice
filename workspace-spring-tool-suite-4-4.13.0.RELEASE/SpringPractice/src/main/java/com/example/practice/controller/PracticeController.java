@@ -46,12 +46,11 @@ public class PracticeController {
 	}
 	
 	@RequestMapping(value = "insert")
-	public String insert(@Validated @ModelAttribute User user, BindingResult bindingResult) {
+	public String insert(Model model, @Validated User user, BindingResult bindingResult) {
 		
 		if (bindingResult.hasErrors()) {
-//			model.addAttribute("userForm", new User());
-//			return "html/insert";
-			return "forward:create";
+			model.addAttribute("userForm", new User());
+			return "html/insert";
 		}
 		
 		int id = this.tblUserService.getNextId();
