@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.sample.mapper.SampleMapper">
+	
+	<select id="selectAll" resultType="com.example.sample.entity.Employee">
+		SELECT
+			id
+			, name
+			, age
+			, sex_flg
+			, birth_date
+			, address
+			, biko
+			, department_code
+			, position_code
+			, update_date
+			, delete_flg
+		FROM
+			employees
+	</select>
+	
+	<select id="getNextId" resultType="java.lang.String">
+		SELECT
+    		LPAD((IFNULL(MAX(id + 0), 0) + 1), 4, '0')
+		FROM
+    		employees
+	</select>
+	
+	<insert id="insertEmployee" parameterType="com.example.sample.entity.Employee">
+		INSERT INTO
+			employees
+			( id
+			, name
+			, age
+			, sex_flg
+			, birth_date
+			, address
+			, biko
+			, department_code
+			, position_code
+			, update_date
+			, delete_flg)
+		VALUES
+			( #{id}
+			, #{name}
+			, #{age}
+			, #{sex_flg}
+			, '2020-4-1'
+			, 'address'
+			, 'biko'
+			, #{department_code}
+			, #{position_code}
+			, (NOW())
+			, '0')
+	</insert>
+
+</mapper>

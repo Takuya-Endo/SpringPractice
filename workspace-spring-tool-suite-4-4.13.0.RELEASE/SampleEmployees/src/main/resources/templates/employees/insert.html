@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	</head>
+	<body>
+		
+		<form th:action="@{/employees/confirmInsert}" method="POST" th:object="${employeeForm}" >
+			
+			name:<input type="text" th:field="*{name}"/><br>
+			age:<input type="text" th:field="*{age}"/><br>
+			sex:<input type="text" th:field="*{sex_flg}"/><br>
+			department:<input type="text" th:field="*{department_code}"/><br>
+			position:<input type="text" th:field="*{position_code}"/><br>
+		
+			<input type="submit" value="confirm"/>
+		
+		</form>
+		
+	</body>
+</html>
