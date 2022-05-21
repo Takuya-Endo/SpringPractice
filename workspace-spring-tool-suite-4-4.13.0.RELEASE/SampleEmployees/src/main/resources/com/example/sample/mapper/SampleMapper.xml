@@ -55,4 +55,43 @@
 			, '0')
 	</insert>
 
+	
+	<select id="getDepartmentList" resultType="com.example.sample.entity.Department">
+		SELECT
+			code
+			, name
+			, tel
+			, biko
+		FROM
+			department_mst
+	</select>
+	
+	<select id="getPositionList" resultType="com.example.sample.entity.Position">
+		SELECT
+			code
+			, name
+			, biko
+		FROM
+			position_mst
+	</select>
+
+	<select id="getDepartmentName" resultType="java.lang.String" parameterType="java.lang.String">
+		SELECT
+			name
+		FROM
+			department_mst
+		WHERE
+			code = #{code}
+	</select>
+	
+	<select id="getPositionName" resultType="java.lang.String" parameterType="java.lang.String">
+		SELECT
+			name
+		FROM
+			position_mst
+		WHERE
+			code = #{code}
+	</select>
+
+
 </mapper>

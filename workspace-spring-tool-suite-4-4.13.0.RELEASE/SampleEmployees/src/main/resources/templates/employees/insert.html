@@ -11,9 +11,15 @@
 			name:<input type="text" th:field="*{name}"/><br>
 			age:<input type="text" th:field="*{age}"/><br>
 			sex:<input type="text" th:field="*{sex_flg}"/><br>
-			department:<input type="text" th:field="*{department_code}"/><br>
-			position:<input type="text" th:field="*{position_code}"/><br>
-		
+			department:
+			<select th:field="*{department_code}">
+				<option th:each="department : ${departmentList}" th:value="${department.code}" th:text="${department.name}"/>
+			</select><br>
+			position:
+			<select th:field="*{position_code}">
+				<option th:each="position : ${positionList}" th:value="${position.code}" th:text="${position.name}"/>
+			</select><br>
+
 			<input type="submit" value="confirm"/>
 		
 		</form>

@@ -33,15 +33,15 @@ public class SampleController {
 	public String showInsert(Model model) {
 		
 		model.addAttribute(new EmployeeForm());
+		model.addAttribute(this.sampleService.getDepartmentList());
+		model.addAttribute(this.sampleService.getPositionList());
 		
 		return "employees/insert";
 	}
 	
 	@RequestMapping(value="/confirmInsert", method=RequestMethod.POST)
 	public String confirmInsert(Model model, EmployeeForm employeeForm) {
-		
-		model.addAttribute(employeeForm);
-		
+		model.addAttribute(this.putCodeName(employeeForm));
 		return "employees/insertConfirm";
 	}
 	
@@ -53,6 +53,15 @@ public class SampleController {
 		return "redirect:list";
 	}
 	
+	/**
+	 * 受け取ったemployeeFormのcodeからcode_nameを検索し、セットする。
+	 * @param employeeForm
+	 * @return code_nameをセットし終えたemployeeForm
+	 */
+	private EmployeeForm putCodeName(EmployeeForm employeeForm) {
+		String departmentName = this.sampleService.getDepartmentName(employeeForm.getDepartment_code());
+		String positionName = this.sampleService.getPositionName(employeeForm.getPosition_code());
+		return employeeForm.setCodeName(departmentName, positionName);
+	}
 	
-
 }
