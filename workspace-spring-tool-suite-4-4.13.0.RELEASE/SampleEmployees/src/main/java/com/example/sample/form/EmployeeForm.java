@@ -1,5 +1,6 @@
 package com.example.sample.form;
 
+import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.beans.BeanUtils;
 
 import com.example.sample.entity.Employee;
@@ -9,8 +10,8 @@ import lombok.Data;
 @Data
 public class EmployeeForm {
 
-	private String id;
-	private String name;
+	@NotBlank private String id;
+	@NotBlank private String name;
 	private String age;
 	private String sex_flg;
 	private String birth_date;

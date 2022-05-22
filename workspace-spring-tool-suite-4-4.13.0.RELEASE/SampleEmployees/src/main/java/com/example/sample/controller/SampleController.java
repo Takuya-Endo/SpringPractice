@@ -5,6 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -41,7 +43,15 @@ public class SampleController {
 	}
 	
 	@RequestMapping(value="/confirmInsert", method=RequestMethod.POST)
-	public String confirmInsert(Model model, EmployeeForm employeeForm) {
+	public String confirmInsert(Model model, @Validated EmployeeForm employeeForm, BindingResult bindingResult) {
+		
+		if (bindingResult.hasErrors()) {
+			model.addAttribute(new EmployeeForm());
+			model.addAttribute(this.sampleService.getDepartmentList());
+			model.addAttribute(this.sampleService.getPositionList());
+			return "employees/insert";
+		}
+		
 		model.addAttribute(this.putCodeName(employeeForm));
 		return "employees/insertConfirm";
 	}
