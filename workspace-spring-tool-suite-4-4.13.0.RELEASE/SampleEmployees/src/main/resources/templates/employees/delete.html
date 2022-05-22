@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	</head>
+	<body>
+		
+		<form th:action="@{/employees/runDelete}" method="POST" th:object="${employeeForm}" >
+
+			name:<span th:text="*{name}"></span><br>
+			age:<span th:text="*{age}"></span><br>
+			sex:<span th:text="*{sex_flg}"></span><br>
+			department:<span th:text="*{department_name}"></span><br>
+			position:<span th:text="*{position_name}"></span><br>
+			
+			<input type="hidden" th:field="*{id}"/>
+		
+			<input type="submit" value="delete" onclick="return confirm('delete?')"/>
+		
+		</form>
+		
+	</body>
+</html>

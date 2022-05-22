@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.sample.entity.Employee;
 import com.example.sample.form.EmployeeForm;
@@ -23,7 +24,7 @@ public class SampleController {
 	public String list(Model model) {
 		
 		
-		List<Employee> employeeList = this.sampleService.selectAll();
+		List<Employee> employeeList = this.sampleService.selectAllEmployees();
 		model.addAttribute("employeeList", employeeList);
 		
 		return "employees/list";
@@ -52,6 +53,48 @@ public class SampleController {
 		
 		return "redirect:list";
 	}
+	
+	@RequestMapping(value="/update", method=RequestMethod.GET)
+	public String showUpdate(Model model, @RequestParam String id) {
+		
+		model.addAttribute(this.sampleService.selectEmployeeById(id).toForm());
+		model.addAttribute(this.sampleService.getDepartmentList());
+		model.addAttribute(this.sampleService.getPositionList());
+		
+		return "employees/update";
+	}
+	
+	@RequestMapping(value="/confirmUpdate", method=RequestMethod.POST)
+	public String confirmUpdate(Model model, EmployeeForm employeeForm) {
+		
+		model.addAttribute(this.putCodeName(employeeForm));
+		return "employees/updateConfirm";
+	}
+	
+	@RequestMapping(value="/runUpdate", method=RequestMethod.POST)
+	public String update(EmployeeForm employeeForm) {
+		
+		boolean result = this.sampleService.updateEmployee(employeeForm.toEntity());
+		return "redirect:list";
+	}
+	
+	@RequestMapping(value="/delete", method=RequestMethod.GET)
+	public String showDelete(Model model, @RequestParam String id) {
+		
+		EmployeeForm employeeForm = this.sampleService.selectEmployeeById(id).toForm();
+		model.addAttribute(this.putCodeName(employeeForm));
+		
+		return "employees/delete";
+	}
+	
+	@RequestMapping(value="/runDelete", method=RequestMethod.POST)
+	public String runDelete(EmployeeForm employeeForm) {
+		
+		this.sampleService.deleteEmployee(employeeForm.toEntity());
+		
+		return "redirect:list";
+	}
+	
 	
 	/**
 	 * 受け取ったemployeeFormのcodeからcode_nameを検索し、セットする。

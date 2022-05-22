@@ -1,5 +1,9 @@
 package com.example.sample.entity;
 
+import org.springframework.beans.BeanUtils;
+
+import com.example.sample.form.EmployeeForm;
+
 import lombok.Data;
 
 @Data
@@ -19,6 +23,12 @@ public class Employee {
 	private String update_date;
 	private String delete_flg;
 
+	
+	public EmployeeForm toForm() {
+		EmployeeForm employeeForm  = new EmployeeForm ();
+		BeanUtils.copyProperties(this, employeeForm);
+		return employeeForm ;
+	}
 	
 	public Employee setCodeName(String departmentName, String positionName) {
 		this.setDepartment_name(departmentName);

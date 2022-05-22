@@ -19,8 +19,8 @@ public class SampleService {
 	@Autowired
 	private SampleMapper sampleMapper;
 	
-	public List<Employee> selectAll() {
-		return this.sampleMapper.selectAll().stream()
+	public List<Employee> selectAllEmployees() {
+		return this.sampleMapper.selectAllEmployees().stream()
 			.collect(ArrayList::new, (list, employee) -> {
 				String departmentName = this.sampleMapper.getDepartmentName(employee.getDepartment_code());
 				String positionName = this.sampleMapper.getPositionName(employee.getPosition_code());
@@ -28,6 +28,10 @@ public class SampleService {
 			}, (a,b)->{;});
 	}
 
+	public Employee selectEmployeeById(String id) {
+		return this.sampleMapper.selectEmployeeById(id);
+	}
+	
 	public boolean insertEmployee(Employee employee) {
 		
 		String id = this.sampleMapper.getNextId();
@@ -35,6 +39,14 @@ public class SampleService {
 		return this.sampleMapper.insertEmployee(employee);
 	}
 	
+	public boolean updateEmployee(Employee employee) {
+		
+		return this.sampleMapper.updateEmployee(employee);
+	}
+	
+	public boolean deleteEmployee(Employee employee) {
+		return this.sampleMapper.deleteEmployee(employee);
+	}
 	
 	
 	public List<Department> getDepartmentList() {

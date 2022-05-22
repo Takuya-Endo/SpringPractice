@@ -3,7 +3,7 @@
 
 <mapper namespace="com.example.sample.mapper.SampleMapper">
 	
-	<select id="selectAll" resultType="com.example.sample.entity.Employee">
+	<select id="selectAllEmployees" resultType="com.example.sample.entity.Employee">
 		SELECT
 			id
 			, name
@@ -25,6 +25,25 @@
     		LPAD((IFNULL(MAX(id + 0), 0) + 1), 4, '0')
 		FROM
     		employees
+	</select>
+	
+	<select id="selectEmployeeById" resultType="com.example.sample.entity.Employee" parameterType="java.lang.String">
+		SELECT
+			id
+			, name
+			, age
+			, sex_flg
+			, birth_date
+			, address
+			, biko
+			, department_code
+			, position_code
+			, update_date
+			, delete_flg
+		FROM
+			employees
+		WHERE
+			id = #{id}
 	</select>
 	
 	<insert id="insertEmployee" parameterType="com.example.sample.entity.Employee">
@@ -54,7 +73,33 @@
 			, (NOW())
 			, '0')
 	</insert>
+	
+	<update id="updateEmployee" parameterType="com.example.sample.entity.Employee">
+		UPDATE
+			employees
+		<set>
+			name = #{name}
+			, age = #{age}
+			, sex_flg = #{sex_flg}
+			, birth_date = '2020-4-1'
+			, address = 'address'
+			, biko = 'biko'
+			, department_code = #{department_code}
+			, position_code = #{position_code}
+			, update_date = (NOW())
+			, delete_flg = '0'
+		</set>
+		WHERE
+			id = #{id}
+	</update>
 
+	<delete id="deleteEmployee" parameterType="com.example.sample.entity.Employee">
+		DELETE
+		FROM
+			employees
+		WHERE
+			id = #{id}
+	</delete>
 	
 	<select id="getDepartmentList" resultType="com.example.sample.entity.Department">
 		SELECT
