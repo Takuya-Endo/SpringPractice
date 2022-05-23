@@ -8,6 +8,10 @@
 		
 		<form th:action="@{/employees/confirmInsert}" method="POST" th:object="${employeeForm}" >
 			
+			<ul th:if="${#fields.hasErrors()}">
+				<li th:each="error : ${#fields.errors()}" th:text="${error}" style="color: red"></li>
+			</ul>
+			
 			name:<input type="text" th:field="*{name}"/><br>
 			age:<input type="text" th:field="*{age}"/><br>
 			sex:<input type="text" th:field="*{sex_flg}"/><br>

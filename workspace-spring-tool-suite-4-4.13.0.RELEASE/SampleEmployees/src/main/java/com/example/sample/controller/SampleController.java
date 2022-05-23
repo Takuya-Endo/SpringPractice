@@ -46,7 +46,7 @@ public class SampleController {
 	public String confirmInsert(Model model, @Validated EmployeeForm employeeForm, BindingResult bindingResult) {
 		
 		if (bindingResult.hasErrors()) {
-			model.addAttribute(new EmployeeForm());
+//			model.addAttribute(new EmployeeForm());
 			model.addAttribute(this.sampleService.getDepartmentList());
 			model.addAttribute(this.sampleService.getPositionList());
 			return "employees/insert";
