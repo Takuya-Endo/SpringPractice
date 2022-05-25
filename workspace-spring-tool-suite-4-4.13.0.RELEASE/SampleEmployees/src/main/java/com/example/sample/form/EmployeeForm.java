@@ -12,7 +12,7 @@ public class EmployeeForm {
 
 	@NotBlank private String id;
 	@NotBlank private String name;
-	private String age;
+	@NotBlank private String age;
 	private String sex_flg;
 	private String birth_date;
 	private String address;
