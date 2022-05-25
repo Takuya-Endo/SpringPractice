@@ -1,5 +1,7 @@
 package com.example.sample.form;
 
+import javax.validation.constraints.Pattern;
+
 import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.beans.BeanUtils;
 
@@ -12,7 +14,7 @@ public class EmployeeForm {
 
 	@NotBlank private String id;
 	@NotBlank private String name;
-	@NotBlank private String age;
+	@NotBlank @Pattern(regexp="^[0-9]$") private String age;
 	private String sex_flg;
 	private String birth_date;
 	private String address;
