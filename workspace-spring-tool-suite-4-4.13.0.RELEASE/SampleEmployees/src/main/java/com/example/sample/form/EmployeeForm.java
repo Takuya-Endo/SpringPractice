@@ -14,10 +14,10 @@ public class EmployeeForm {
 
 	@NotBlank private String id;
 	@NotBlank private String name;
-	@NotBlank @Pattern(regexp="^[0-9]$") private String age;
-	private String sex_flg;
-	private String birth_date;
-	private String address;
+	@NotBlank @Pattern(regexp="^[0-9]*$") private String age;
+	@NotBlank private String sex_flg;
+	@NotBlank private String birth_date;
+	@NotBlank private String address;
 	private String biko;
 	private String department_code;
 	private String department_name;
