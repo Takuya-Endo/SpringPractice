@@ -12,11 +12,11 @@ import lombok.Data;
 @Data
 public class EmployeeForm {
 
-	@NotBlank private String id;
+	private String id;
 	@NotBlank private String name;
 	@NotBlank @Pattern(regexp="^[0-9]*$") private String age;
-	@NotBlank private String sex_flg;
-	@NotBlank private String birth_date;
+	@NotBlank @Pattern(regexp="^[0|1]$") private String sex_flg;
+	@NotBlank @Pattern(regexp="^[0-9]{4}[/][0-9]{1,2}[/][0-9]{1,2}$") private String birth_date;
 	@NotBlank private String address;
 	private String biko;
 	private String department_code;

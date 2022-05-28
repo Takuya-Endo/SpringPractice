@@ -11,14 +11,20 @@
 			name:<span th:text="*{name}"></span><br>
 			age:<span th:text="*{age}"></span><br>
 			sex:<span th:text="*{sex_flg}"></span><br>
+			birth_date<span th:text="*{birth_date}"></span><br>
+			address<span th:text="*{address}"></span><br>
 			department:<span th:text="*{department_name}"></span><br>
 			position:<span th:text="*{position_name}"></span><br>
+			biko:<span th:text="*{biko}"></span><br>
 			
 			<input type="hidden" th:field="*{name}"/>
 			<input type="hidden" th:field="*{age}"/>
 			<input type="hidden" th:field="*{sex_flg}"/>
+			<input type="hidden" th:field="*{birth_date}"/>
+			<input type="hidden" th:field="*{address}"/>
 			<input type="hidden" th:field="*{department_code}"/>
 			<input type="hidden" th:field="*{position_code}"/>
+			<input type="hidden" th:field="*{biko}"/>
 		
 			<input type="submit" value="insert"/>
 		

@@ -65,9 +65,9 @@
 			, #{name}
 			, #{age}
 			, #{sex_flg}
-			, '2020-4-1'
-			, 'address'
-			, 'biko'
+			, #{birth_date}
+			, #{address}
+			, #{biko}
 			, #{department_code}
 			, #{position_code}
 			, (NOW())
@@ -81,9 +81,9 @@
 			name = #{name}
 			, age = #{age}
 			, sex_flg = #{sex_flg}
-			, birth_date = '2020-4-1'
-			, address = 'address'
-			, biko = 'biko'
+			, birth_date = #{birth_date}
+			, address = #{address}
+			, biko = #{biko}
 			, department_code = #{department_code}
 			, position_code = #{position_code}
 			, update_date = (NOW())

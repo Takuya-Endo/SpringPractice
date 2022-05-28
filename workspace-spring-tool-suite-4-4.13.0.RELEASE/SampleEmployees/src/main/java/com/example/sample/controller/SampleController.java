@@ -29,7 +29,6 @@ public class SampleController {
 	@RequestMapping(value="/list", method=RequestMethod.GET)
 	public String list(Model model) {
 		
-		
 		List<Employee> employeeList = this.sampleService.selectAllEmployees();
 		model.addAttribute("employeeList", employeeList);
 		
@@ -50,7 +49,6 @@ public class SampleController {
 	public String confirmInsert(Model model, @Validated EmployeeForm employeeForm, BindingResult bindingResult) {
 		
 		if (bindingResult.hasErrors()) {
-//			model.addAttribute(new EmployeeForm());
 			model.addAttribute(this.sampleService.getDepartmentList());
 			model.addAttribute(this.sampleService.getPositionList());
 			return "employees/insert";
@@ -79,7 +77,13 @@ public class SampleController {
 	}
 	
 	@RequestMapping(value="/confirmUpdate", method=RequestMethod.POST)
-	public String confirmUpdate(Model model, EmployeeForm employeeForm) {
+	public String confirmUpdate(Model model, @Validated EmployeeForm employeeForm, BindingResult bindingResult) {
+		
+		if (bindingResult.hasErrors()) {
+			model.addAttribute(this.sampleService.getDepartmentList());
+			model.addAttribute(this.sampleService.getPositionList());
+			return "employees/update";
+		}
 		
 		model.addAttribute(this.putCodeName(employeeForm));
 		return "employees/updateConfirm";
