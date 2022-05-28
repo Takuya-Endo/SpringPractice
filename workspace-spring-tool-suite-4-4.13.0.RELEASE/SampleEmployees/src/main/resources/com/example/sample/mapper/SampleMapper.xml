@@ -5,19 +5,25 @@
 	
 	<select id="selectAllEmployees" resultType="com.example.sample.entity.Employee">
 		SELECT
-			id
-			, name
-			, age
-			, sex_flg
-			, birth_date
-			, address
-			, biko
-			, department_code
-			, position_code
-			, update_date
-			, delete_flg
+			e.id
+			, e.name
+			, e.age
+			, e.sex_flg
+			, e.birth_date
+			, e.address
+			, e.biko
+			, d.name AS department_name
+			, p.name AS position_name
+			, e.update_date
+			, e.delete_flg
 		FROM
-			employees
+			(
+			employees e
+				LEFT OUTER JOIN department_mst d
+					ON (e.department_code = d.code)
+			)
+			LEFT OUTER JOIN position_mst p
+				ON (e.position_code = p.code)
 	</select>
 	
 	<select id="getNextId" resultType="java.lang.String">

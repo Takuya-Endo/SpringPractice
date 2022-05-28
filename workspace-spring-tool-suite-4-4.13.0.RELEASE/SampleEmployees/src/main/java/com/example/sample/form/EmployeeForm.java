@@ -30,7 +30,9 @@ public class EmployeeForm {
 	public Employee toEntity() {
 		Employee employee  = new Employee ();
 		BeanUtils.copyProperties(this, employee);
-		return employee ;
+		
+		//空文字だと外部キー制約に引っかかるため、departmentとpositionのコードはnullに変換してから返却
+		return employee.changeEmptyCodeToNull();
 	}
 	
 	public EmployeeForm setCodeName(String departmentName, String positionName) {

@@ -20,12 +20,19 @@ public class SampleService {
 	private SampleMapper sampleMapper;
 	
 	public List<Employee> selectAllEmployees() {
-		return this.sampleMapper.selectAllEmployees().stream()
-			.collect(ArrayList::new, (list, employee) -> {
-				String departmentName = this.sampleMapper.getDepartmentName(employee.getDepartment_code());
-				String positionName = this.sampleMapper.getPositionName(employee.getPosition_code());
-				list.add(employee.setCodeName(departmentName, positionName));
-			}, (a,b)->{;});
+		
+		return this.sampleMapper.selectAllEmployees();
+		
+		//↑下だとJavaの処理に頼っているので、上に変えて、SQLの段階で結合する。
+		
+//		return this.sampleMapper.selectAllEmployees().stream()
+//			.collect(ArrayList::new, (list, employee) -> {
+//				String departmentName = this.sampleMapper.getDepartmentName(employee.getDepartment_code());
+//				String positionName = this.sampleMapper.getPositionName(employee.getPosition_code());
+//				list.add(employee.setCodeName(departmentName, positionName));
+//			}, (a,b)->{;});
+		
+		
 	}
 
 	public Employee selectEmployeeById(String id) {
@@ -50,10 +57,29 @@ public class SampleService {
 	
 	
 	public List<Department> getDepartmentList() {
-		return this.sampleMapper.getDepartmentList();
+		
+		List<Department> departmentList = this.sampleMapper.getDepartmentList();
+		
+		Department department = new Department();
+		department.setCode("");
+		department.setName("---");
+		
+		departmentList.add(0, department);
+		
+		return departmentList;
 	}
+	
 	public List<Position> getPositionList() {
-		return this.sampleMapper.getPositionList();
+		
+		List<Position> positionList = this.sampleMapper.getPositionList();
+		
+		Position position = new Position();
+		position.setCode("");
+		position.setName("---");
+		
+		positionList.add(0, position);
+		
+		return positionList;
 	}
 	
 	public String getDepartmentName(String code) {

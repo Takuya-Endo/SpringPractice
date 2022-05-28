@@ -9,14 +9,20 @@
 		<a th:href="@{/employees/insert}">INSERT</a>
 		
 		<table border="1">
-			<tr><th>name</th><th>age</th><th>sex</th><th>department</th><th>position</th><th></th><th></th></tr>
+			<tr>
+				<th>name</th><th>age</th><th>sex</th><th>birth_date</th><th>address</th>
+				<th>department</th><th>position</th><th>biko</th><th></th><th></th>
+			</tr>
 			
 			<tr th:each="employee : ${employeeList}">
 				<td th:text="${employee.name}"></td>
 				<td th:text="${employee.age}"></td>
 				<td th:text="${employee.sex_flg}"></td>
+				<td th:text="${employee.birth_date}"></td>
+				<td th:text="${employee.address}"></td>
 				<td th:text="${employee.department_name}"></td>
 				<td th:text="${employee.position_name}"></td>
+				<td th:text="${employee.biko}"></td>
 				<td><a th:href="@{/employees/update(id=${employee.id})}">UPDATE</a></td>
 				<td><a th:href="@{/employees/delete(id=${employee.id})}">DELETE</a></td>
 			</tr>

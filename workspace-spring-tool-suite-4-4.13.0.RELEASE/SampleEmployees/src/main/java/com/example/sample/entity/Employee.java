@@ -36,4 +36,15 @@ public class Employee {
 		return this;
 	}
 	
+	public Employee changeEmptyCodeToNull() {
+		
+		if ("".equals(this.getDepartment_code())) {
+			this.setDepartment_code(null);
+		}
+		if ("".equals(this.getPosition_code())) {
+			this.setPosition_code(null);
+		}
+		return this;
+	}
+	
 }
