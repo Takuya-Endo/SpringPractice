@@ -14,16 +14,33 @@
 			
 			name:<input type="text" th:field="*{name}"/><br>
 			age:<input type="text" th:field="*{age}"/><br>
+			<!--
 			sex:<input type="text" th:field="*{sex_flg}"/><br>
+			-->
+			sex:
+			<select th:field="*{sex_flg}">
+				<option value="0" th:selected="*{sex_flg} == '0'">男</option>
+				<option value="1" th:selected="*{sex_flg} == '1'">女</option>
+			</select><br>
 			birth_date<input type="text" th:field="*{birth_date}"/><br>
 			address<input type="text" th:field="*{address}"/><br>
 			department:
 			<select th:field="*{department_code}">
-				<option th:each="department : ${departmentList}" th:value="${department.code}" th:text="${department.name}"/>
+				<option
+					th:each="department : ${departmentList}"
+					th:value="${department.code}"
+					th:text="${department.name}"
+					th:selected="${department.code} == *{department_code}"
+				/>
 			</select><br>
 			position:
 			<select th:field="*{position_code}">
-				<option th:each="position : ${positionList}" th:value="${position.code}" th:text="${position.name}"/>
+				<option
+					th:each="position : ${positionList}"
+					th:value="${position.code}"
+					th:text="${position.name}"
+					th:selected="${position.code} == *{position_code}"
+				/>
 			</select><br>
 			biko<input type="text" th:field="*{biko}"/><br>
 
