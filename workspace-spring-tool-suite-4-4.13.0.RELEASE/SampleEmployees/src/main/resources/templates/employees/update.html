@@ -14,7 +14,15 @@
 			
 			name:<input type="text" th:field="*{name}"/><br>
 			age:<input type="text" th:field="*{age}"/><br>
-			sex:<input type="text" th:field="*{sex_flg}"/><br>
+			sex:
+			<!--
+			<input type="text" th:field="*{sex_flg}"/>
+			-->
+			<select th:field="*{sex_flg}">
+				<option value="0" th:selected="*{sex_flg} == '0'">男</option>
+				<option value="1" th:selected="*{sex_flg} == '1'">女</option>
+			</select>
+			<br>
 			birth_date<input type="text" th:field="*{birth_date}"/><br>
 			address<input type="text" th:field="*{address}"/><br>
 			department:
