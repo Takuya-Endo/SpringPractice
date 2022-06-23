@@ -25,10 +25,24 @@
 			<input type="hidden" th:field="*{department_code}"/>
 			<input type="hidden" th:field="*{position_code}"/>
 			<input type="hidden" th:field="*{biko}"/>
-		
-			<input type="submit" value="back"/>
+			
 			<input type="submit" value="insert"/>
 		
+		</form>
+		
+		<form th:action="@{/employees/backInsert}" method="POST" th:object="${employeeForm}" >
+
+			<input type="hidden" th:field="*{name}"/>
+			<input type="hidden" th:field="*{age}"/>
+			<input type="hidden" th:field="*{sex_flg}"/>
+			<input type="hidden" th:field="*{birth_date}"/>
+			<input type="hidden" th:field="*{address}"/>
+			<input type="hidden" th:field="*{department_code}"/>
+			<input type="hidden" th:field="*{position_code}"/>
+			<input type="hidden" th:field="*{biko}"/>
+		
+			<input type="submit" value="back"/>
+			
 		</form>
 		
 	</body>

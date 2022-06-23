@@ -26,7 +26,6 @@ public class EmployeeForm {
 	private String update_date;
 	private String delete_flg;
 	
-	
 	public Employee toEntity() {
 		Employee employee  = new Employee ();
 		BeanUtils.copyProperties(this, employee);

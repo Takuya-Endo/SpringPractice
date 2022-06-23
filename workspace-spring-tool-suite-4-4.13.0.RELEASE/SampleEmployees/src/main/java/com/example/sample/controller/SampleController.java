@@ -1,5 +1,7 @@
 package com.example.sample.controller;
 
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -58,10 +60,23 @@ public class SampleController {
 		return "employees/insertConfirm";
 	}
 	
+	@RequestMapping(value="/backInsert", method=RequestMethod.POST)
+	public String backeInsert(Model model, EmployeeForm employeeForm) {
+		
+		model.addAttribute(this.sampleService.getDepartmentList());
+		model.addAttribute(this.sampleService.getPositionList());
+		return "employees/insert";
+	}
+	
 	@RequestMapping(value="/runInsert", method=RequestMethod.POST)
 	public String insert(EmployeeForm employeeForm) {
 		
 		this.sampleService.insertEmployee(employeeForm.toEntity());
+		
+//		//Employeeのフィールドの型を全てStringにしていない場合はこれが必要
+//		Employee employee = employeeForm.toEntity();
+//		employee.setBirth_date(new Date());
+//		this.sampleService.insertEmployee(employee);
 		
 		return "redirect:list";
 	}
