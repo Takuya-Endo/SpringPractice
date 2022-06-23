@@ -26,10 +26,12 @@
 			<input type="hidden" th:field="*{position_code}"/>
 			<input type="hidden" th:field="*{biko}"/>
 			
+			<input type="submit" value="back" th:formaction="@{/employees/backInsert}"/>
 			<input type="submit" value="insert"/>
 		
 		</form>
 		
+		<!--
 		<form th:action="@{/employees/backInsert}" method="POST" th:object="${employeeForm}" >
 
 			<input type="hidden" th:field="*{name}"/>
@@ -44,6 +46,7 @@
 			<input type="submit" value="back"/>
 			
 		</form>
+		-->
 		
 	</body>
 </html>
